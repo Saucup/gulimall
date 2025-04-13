@@ -1,0 +1,23 @@
+spring:
+  datasource:
+
+    #MySQL配置
+    url: jdbc:mysql://server-addr:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: gulimall_pms
+    password: nN25bApXcc6SaxRr
+    driverClassName: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: server-addr:8848
+  application:
+    name: gulimall-product
+
+mybatis-plus:
+  mapper-locations: classpath*/:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 10000

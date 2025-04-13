@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+      server-addr: server-addr:8848
+    gateway:
+      mvc:
+        routes:
+          - id: testroute
+            uri: https://www.baidu.com
+            predicates:
+              - Query=url,baidu
+          - id: qqroute
+            uri: https://www.qq.com
+            predicates:
+              - Query=url,qq
+  application:
+    name: gulimall-gateway
